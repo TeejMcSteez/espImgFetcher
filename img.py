@@ -1,9 +1,10 @@
-import requests 
+import requests
 import time
 from datetime import datetime 
 
 url = "http://esp32cam.local"
-save_dir = "/home/tj/Desktop/espImages/"
+save_dir = "/home/tj/Desktop/espImages/"#for linux
+#save_dir = "C:/Users/teej/Desktop/espImages/"#for windows
 max_retries = 3
 
 while True:
