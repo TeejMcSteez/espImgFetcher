@@ -5,7 +5,8 @@ from datetime import datetime
 
 url = "http://esp32cam.local/capture"
 # save_dir = "/home/tj/Desktop/espImages/"  # For Linux
-save_dir = "C:/Users/teej/Desktop/espImages/"  # For Windows
+save_dir = "C:/Users/teej/OneDrive/Desktop/espImages/"  # For Windows Laptop
+#save_dir = "C:/Users/teej/Desktop/espImages/"  # For Windows PC
 max_retries = 3
 max_images = 50  # Set the maximum number of images to keep
 
@@ -54,7 +55,7 @@ while True:
                 print(f"Status Code: {response.status_code}")
         except Exception as e:
             print(f"Attempt {attempt} failed: {e}")
-            time.sleep(2)
+            time.sleep(3)
     else:
         print("Max retries reached. Skipping this cycle.")
     time.sleep(3)
