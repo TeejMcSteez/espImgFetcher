@@ -6,13 +6,14 @@ from datetime import datetime, timedelta
 
 # Configuration
 save_dir = "C:/Users/teej/Desktop/espImages/"  # Replace with your desired directory
+backup_dir = "imgs/"
 max_images = 250  # Set the maximum number of images to keep
 UDP_IP = ''       # Listen on all available interfaces
 UDP_PORT = 50000  # Must match 'remote_port' in your ESP32 code
 
 # Ensure the save directory exists
 if not os.path.exists(save_dir):
-    os.makedirs(save_dir)
+    os.makedirs(backup_dir)
 
 # Set up the UDP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
