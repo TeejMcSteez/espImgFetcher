@@ -1,5 +1,6 @@
 import os
 import cv2
+import time
 from PIL import Image
 from datetime import datetime
 
@@ -87,5 +88,6 @@ def generate_video():
     os.rmdir(resized_dir)
 
     print(f"Video saved as {video_path}")
+    time.sleep(.35)
 
 generate_video()
