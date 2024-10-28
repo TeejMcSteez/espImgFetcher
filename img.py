@@ -1,6 +1,6 @@
 #TODO
-#I want to add a feature where python smashes the imgs into a video for playback every 2 minutes (for now)
-#Wanna use the video playback to display to a http page of every x minute sequence for the past day (ish)
+#Ex: https://www.geeksforgeeks.org/python-create-video-using-multiple-images-using-opencv/
+#Added video playback, now just need to add cron job and a bash script to run the script every 10 minutes and delete it every 24 hrs
 import os
 import requests
 #import time?
@@ -11,7 +11,7 @@ url = "http://esp32cam.local/capture"
 #save_dir = "C:/Users/teej/OneDrive/Desktop/espImages/"  # For Windows Laptop
 save_dir = "C:/Users/teej/Desktop/espImages/"  # For Windows PC
 max_retries = 3 # Max numbers of retries before closing connection 
-max_images = 250  # Set the maximum number of images to keep
+max_images = 500  # Set the maximum number of images to keep
 
 # Ensure the save directory exists
 if not os.path.exists(save_dir):
