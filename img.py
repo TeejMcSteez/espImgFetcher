@@ -1,3 +1,6 @@
+#TODO
+#I want to add a feature where python smashes the imgs into a video for playback every 2 minutes (for now)
+#Wanna use the video playback to display to a http page of every x minute sequence for the past day (ish)
 import os
 import requests
 #import time?
