@@ -1,14 +1,14 @@
 import os
 import requests
-import time
+#import time?
 from datetime import datetime
 
 url = "http://esp32cam.local/capture"
-# save_dir = "/home/tj/Desktop/espImages/"  # For Linux
-save_dir = "C:/Users/teej/OneDrive/Desktop/espImages/"  # For Windows Laptop
-#save_dir = "C:/Users/teej/Desktop/espImages/"  # For Windows PC
+#save_dir = "/home/tj/Desktop/espImages/"  # For Linux
+#save_dir = "C:/Users/teej/OneDrive/Desktop/espImages/"  # For Windows Laptop
+save_dir = "C:/Users/teej/Desktop/espImages/"  # For Windows PC
 max_retries = 3 # Max numbers of retries before closing connection 
-max_images = 100  # Set the maximum number of images to keep
+max_images = 250  # Set the maximum number of images to keep
 
 # Ensure the save directory exists
 if not os.path.exists(save_dir):
@@ -17,7 +17,7 @@ if not os.path.exists(save_dir):
 while True:
     for attempt in range(1, max_retries + 1):
         try:
-            response = requests.get(url, timeout=5)
+            response = requests.get(url, timeout=1)
             if response.status_code == 200:
                 # Check Content-Type header
                 content_type = response.headers.get('Content-Type')
@@ -54,7 +54,7 @@ while True:
                 print(f"Status Code: {response.status_code}")
         except Exception as e:
             print(f"Attempt {attempt} failed: {e}")
-            time.sleep(1)
+            #time.sleep(1)
     else:
         print("Max retries reached. Skipping this cycle.")
-    time.sleep(1)
+    #time.sleep(1)
