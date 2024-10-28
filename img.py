@@ -88,6 +88,6 @@ def generate_video():
     os.rmdir(resized_dir)
 
     print(f"Video saved as {video_path}")
-    time.sleep(.35)
+    time.sleep(.5)
 
 generate_video()
