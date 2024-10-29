@@ -1,7 +1,3 @@
-#TODO:
-#Find a way to start a little ahead of the total number if images
-#in the directory as it doesnt need them all from the start and 
-#is required to not cause errors in finding a file that doesnt exist!
 import os
 import cv2
 from PIL import Image
