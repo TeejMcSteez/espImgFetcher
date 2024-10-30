@@ -49,8 +49,7 @@ class SimpleESP32Recorder:
                 if ret:
                     # Add timestamp to frame
                     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                    cv2.putText(frame, timestamp, (10, 30), 
-                              cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+                    cv2.putText(frame, timestamp, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
                     
                     # Write frame to video file
                     self.video_writer.write(frame)
