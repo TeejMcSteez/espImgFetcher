@@ -1,7 +1,8 @@
 import os
 import cv2
-import time
+import requests
 from PIL import Image
+import time
 from datetime import datetime
 
 # Define paths
@@ -56,7 +57,7 @@ for file in valid_images:
     im = Image.open(os.path.join(image_dir, file))
     im_resized = im.resize((mean_width, mean_height), Image.LANCZOS)
     im_resized.save(os.path.join(resized_dir, file), 'JPEG', quality=95)
-    print(f"{file} resized")
+    print(f"{file} is resized")
 
 def generate_video():
     images = [img for img in os.listdir(resized_dir)
@@ -71,7 +72,7 @@ def generate_video():
     height, width, layers = frame.shape
 
     fourcc = cv2.VideoWriter_fourcc(*'MJPG')
-    fps = 1.5  # Adjust the frame rate as needed
+    fps = 1  # Adjust the frame rate as needed
     video = cv2.VideoWriter(video_path, fourcc, fps, (width, height))
 
     for image in images:
@@ -89,5 +90,3 @@ def generate_video():
 
     print(f"Video saved as {video_path}")
     time.sleep(.5)
-
-generate_video()
