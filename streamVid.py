@@ -75,7 +75,7 @@ class SimpleESP32Recorder:
 
 def main():
     # You can modify these settings as needed
-    CAMERA_URL = "http://192.168.1.100/stream"  # Change to your ESP32-CAM's IP
+    CAMERA_URL = "http://esp32cam.local/stream"  # Change to your ESP32-CAM's IP
     OUTPUT_DIR = "recordings"  # Change to your preferred save location
     
     recorder = SimpleESP32Recorder(CAMERA_URL, OUTPUT_DIR)
